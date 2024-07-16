@@ -66,10 +66,10 @@ module.exports = {
  
       const helpListImages = [
  
-"https://i.imgur.com/DPTioGT.gif",
-"https://i.imgur.com/DPTioGT.gif', ",
-"https://i.imgur.com/DPTioGT.gif",
-"https://i.imgur.com/DPTioGT.gif",
+"https://i.imgur.com/VYssPQ7.gif",
+"https://i.imgur.com/VYssPQ7.gif', ",
+"https://i.imgur.com/VYssPQ7.gif",
+"https://i.imgur.com/VYssPQ7.gif",
 "https://i.imgur.com/RrRNARq.gif",
 "https://i.imgur.com/jBd6fgF.gif",
 "https://i.imgur.com/uB4nTr7.gif"

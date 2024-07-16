@@ -202,7 +202,7 @@ module.exports = {
 
       body: `🈷\x20\x20\x20\x20\x20\x20\x20${name}\x20\x20\x20\x20\x20\x20\x20🈷` + getLang("myPrefix", global.GoatBot.config.prefix, utils.getPrefix(event.threadID)),
 
-      attachment: await global.utils.getStreamFromURL("https://i.imgur.com/DPTioGT.gif")
+      attachment: await global.utils.getStreamFromURL("https://i.imgur.com/VYssPQ7.gif")
 
         };
 

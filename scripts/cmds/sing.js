@@ -2,7 +2,7 @@ const axios = require("axios");
 const fs = require('fs-extra');
 const path = require('path');
 const { getStreamFromURL, shortenURL, randomString } = global.utils;
-const ytdl = require("ytdl-core");
+const ytdl = require("@distube/ytdl-core");
 const yts = require("yt-search");
 
 async function sing(api, event, args, message) {
@@ -23,7 +23,7 @@ async function sing(api, event, args, message) {
    
     if (event.messageReply && event.messageReply.attachments && event.messageReply.attachments.length > 0) {
       const shortUrl = await extractShortUrl();
-      const musicRecognitionResponse = await axios.get(`https://youtube-music-sooty.vercel.app/kshitiz?url=${encodeURIComponent(shortUrl)}`);
+      const musicRecognitionResponse = await axios.get(`https://kaizenji-rest-api.onrender.com/music?url=${encodeURIComponent(shortUrl)}`);
       title = musicRecognitionResponse.data.title;
     } else if (args.length === 0) {
       message.reply("Please provide a song name.");
@@ -68,8 +68,8 @@ module.exports = {
   config: {
     name: "sing",
     version: "1.0",
-    aliases: ["music", "song"],
-    author: "Kshitiz",
+    aliases: ["song"],
+    author: "Kshitiz",//fixed api by kaizenji 
     countDown: 10,
     role: 0,
     shortDescription: "play music from yt",

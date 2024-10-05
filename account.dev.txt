@@ -14,7 +14,7 @@
     },
     {
         "domain": ".facebook.com",
-        "expirationDate": 1762573956.822253,
+        "expirationDate": 1762651437.179916,
         "hostOnly": false,
         "httpOnly": true,
         "name": "datr",
@@ -27,7 +27,7 @@
     },
     {
         "domain": ".facebook.com",
-        "expirationDate": 1735737034.773062,
+        "expirationDate": 1735868237.632146,
         "hostOnly": false,
         "httpOnly": true,
         "name": "fr",
@@ -36,11 +36,11 @@
         "secure": true,
         "session": false,
         "storeId": null,
-        "value": "1yapQIL6BnscQWwH0.AWV2I65GKH-kRiIQ4IBY6L_6SP4.Bmj9PA..AAA.0.0.Bm_pfK.AWU40B9gtA4"
+        "value": "1yapQIL6BnscQWwH0.AWUIrA6ctaqGOgOQkS0VXsScdow.Bmj9PA..AAA.0.0.BnAJhL.AWXBHGmv1WM"
     },
     {
         "domain": ".facebook.com",
-        "expirationDate": 1733197956,
+        "expirationDate": 1733276242,
         "hostOnly": false,
         "httpOnly": false,
         "name": "vpd",
@@ -53,7 +53,7 @@
     },
     {
         "domain": ".facebook.com",
-        "expirationDate": 1759497034.154852,
+        "expirationDate": 1759628237.632953,
         "hostOnly": false,
         "httpOnly": true,
         "name": "xs",
@@ -62,11 +62,11 @@
         "secure": true,
         "session": false,
         "storeId": null,
-        "value": "24%3A4e_3fpVSSit6WA%3A2%3A1727961033%3A-1%3A818"
+        "value": "1%3A5Zq-yCjClfrUYA%3A2%3A1728092237%3A-1%3A7856"
     },
     {
         "domain": ".facebook.com",
-        "expirationDate": 1759549956,
+        "expirationDate": 1759628242,
         "hostOnly": false,
         "httpOnly": false,
         "name": "fbl_st",
@@ -75,7 +75,7 @@
         "secure": true,
         "session": false,
         "storeId": null,
-        "value": "101427745%3BT%3A28800232"
+        "value": "101320660%3BT%3A28801537"
     },
     {
         "domain": ".facebook.com",
@@ -92,7 +92,19 @@
     },
     {
         "domain": ".facebook.com",
-        "expirationDate": 1759497034.154074,
+        "hostOnly": false,
+        "httpOnly": false,
+        "name": "m_pixel_ratio",
+        "path": "/",
+        "sameSite": null,
+        "secure": true,
+        "session": true,
+        "storeId": null,
+        "value": "1.875"
+    },
+    {
+        "domain": ".facebook.com",
+        "expirationDate": 1759628237.631444,
         "hostOnly": false,
         "httpOnly": false,
         "name": "c_user",
@@ -101,7 +113,7 @@
         "secure": true,
         "session": false,
         "storeId": null,
-        "value": "61562277639448"
+        "value": "61557677960553"
     },
     {
         "domain": ".facebook.com",
@@ -118,7 +130,7 @@
     },
     {
         "domain": ".facebook.com",
-        "expirationDate": 1762521034.154637,
+        "expirationDate": 1762652237.632589,
         "hostOnly": false,
         "httpOnly": true,
         "name": "sb",
@@ -131,7 +143,7 @@
     },
     {
         "domain": ".facebook.com",
-        "expirationDate": 1728565578,
+        "expirationDate": 1728696904,
         "hostOnly": false,
         "httpOnly": false,
         "name": "wd",
@@ -144,7 +156,7 @@
     },
     {
         "domain": ".facebook.com",
-        "expirationDate": 1735789956,
+        "expirationDate": 1735868241,
         "hostOnly": false,
         "httpOnly": false,
         "name": "wl_cbv",
@@ -153,6 +165,18 @@
         "secure": true,
         "session": false,
         "storeId": null,
-        "value": "v2%3Bclient_version%3A2635%3Btimestamp%3A1728013956"
+        "value": "v2%3Bclient_version%3A2635%3Btimestamp%3A1728092241"
+    },
+    {
+        "domain": ".facebook.com",
+        "hostOnly": false,
+        "httpOnly": false,
+        "name": "x-referer",
+        "path": "/",
+        "sameSite": "no_restriction",
+        "secure": true,
+        "session": true,
+        "storeId": null,
+        "value": "eyJyIjoiL2NoZWNrcG9pbnQvMTUwMTA5MjgyMzUyNTI4Mi9sb2dvdXQvP25leHQ9aHR0cHMlM0ElMkYlMkZtLmZhY2Vib29rLmNvbSUyRmxvZ2luJTJGc2F2ZS1kZXZpY2UlMkYmcGFpcHY9MCZlYXY9QWZabTlmLUdoQ21pT0E1M3lDdGlwNllLQ21nRDIxNnlwN0ZNMWtMMC1GSDhWQWNKVVgxdjVQSjltd3FrZXpQNUNMWSIsImgiOiIvY2hlY2twb2ludC8xNTAxMDkyODIzNTI1MjgyL2xvZ291dC8%2FbmV4dD1odHRwcyUzQSUyRiUyRm0uZmFjZWJvb2suY29tJTJGbG9naW4lMkZzYXZlLWRldmljZSUyRiZwYWlwdj0wJmVhdj1BZlptOWYtR2hDbWlPQTUzeUN0aXA2WUtDbWdEMjE2eXA3Rk0xa0wwLUZIOFZBY0pVWDF2NVBKOW13cWtlelA1Q0xZIiwicyI6Im0ifQ%3D%3D"
     }
 ]

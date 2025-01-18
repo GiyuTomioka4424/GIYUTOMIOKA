@@ -1246,4 +1246,171 @@ const NUM_TO_MONTH = [
 ];
 const NUM_TO_DAY = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-function formatDate(da
+function formatDate(date) {
+  let d = date.getUTCDate();
+  d = d >= 10 ? d : "0" + d;
+  let h = date.getUTCHours();
+  h = h >= 10 ? h : "0" + h;
+  let m = date.getUTCMinutes();
+  m = m >= 10 ? m : "0" + m;
+  let s = date.getUTCSeconds();
+  s = s >= 10 ? s : "0" + s;
+  return (
+    NUM_TO_DAY[date.getUTCDay()] +
+    ", " +
+    d +
+    " " +
+    NUM_TO_MONTH[date.getUTCMonth()] +
+    " " +
+    date.getUTCFullYear() +
+    " " +
+    h +
+    ":" +
+    m +
+    ":" +
+    s +
+    " GMT"
+  );
+}
+
+function formatCookie(arr, url) {
+  return (
+    arr[0] + "=" + arr[1] + "; Path=" + arr[3] + "; Domain=" + url + ".com"
+  );
+}
+
+function formatThread(data) {
+  return {
+    threadID: formatID(data.thread_fbid.toString()),
+    participants: data.participants.map(formatID),
+    participantIDs: data.participants.map(formatID),
+    name: data.name,
+    nicknames: data.custom_nickname,
+    snippet: data.snippet,
+    snippetAttachments: data.snippet_attachments,
+    snippetSender: formatID((data.snippet_sender || "").toString()),
+    unreadCount: data.unread_count,
+    messageCount: data.message_count,
+    imageSrc: data.image_src,
+    timestamp: data.timestamp,
+    serverTimestamp: data.server_timestamp, // what is this?
+    muteUntil: data.mute_until,
+    isCanonicalUser: data.is_canonical_user,
+    isCanonical: data.is_canonical,
+    isSubscribed: data.is_subscribed,
+    folder: data.folder,
+    isArchived: data.is_archived,
+    recipientsLoadable: data.recipients_loadable,
+    hasEmailParticipant: data.has_email_participant,
+    readOnly: data.read_only,
+    canReply: data.can_reply,
+    cannotReplyReason: data.cannot_reply_reason,
+    lastMessageTimestamp: data.last_message_timestamp,
+    lastReadTimestamp: data.last_read_timestamp,
+    lastMessageType: data.last_message_type,
+    emoji: data.custom_like_icon,
+    color: data.custom_color,
+    adminIDs: data.admin_ids,
+    threadType: data.thread_type
+  };
+}
+
+function getType(obj) {
+  return Object.prototype.toString.call(obj).slice(8, -1);
+}
+
+function formatProxyPresence(presence, userID) {
+  if (presence.lat === undefined || presence.p === undefined) return null;
+  return {
+    type: "presence",
+    timestamp: presence.lat * 1000,
+    userID: userID,
+    statuses: presence.p
+  };
+}
+
+function formatPresence(presence, userID) {
+  return {
+    type: "presence",
+    timestamp: presence.la * 1000,
+    userID: userID,
+    statuses: presence.a
+  };
+}
+
+function decodeClientPayload(payload) {
+  /*
+  Special function which Client using to "encode" clients JSON payload
+  */
+  return JSON.parse(String.fromCharCode.apply(null, payload));
+}
+
+function getAppState(jar) {
+  return jar
+    .getCookies("https://www.facebook.com")
+    .concat(jar.getCookies("https://www.messenger.com"));
+}
+
+function getAccessFromBusiness(jar, Options) {
+  return function(res) {
+    var html = res ? res.body : null;
+    return get('https://business.facebook.com/content_management', jar, null, Options, null, { noRef: true })
+      .then(function(res) {
+        var token = /"accessToken":"([^.]+)","clientID":/g.exec(res.body)[1];
+        return [html, token];
+      })
+      .catch(function() {
+        return [html, null];
+      });
+  }
+}
+
+const meta = prop => new RegExp(`<meta property="${prop}" content="([^"]*)"`);
+
+module.exports = {
+  isReadableStream,
+  get,
+  post,
+  postFormData,
+  generateThreadingID,
+  generateOfflineThreadingID,
+  getGUID,
+  getFrom,
+  makeParsable,
+  arrToForm,
+  getSignatureID,
+  getJar: request.jar,
+  generateTimestampRelative,
+  makeDefaults,
+  parseAndCheckLogin,
+  saveCookies,
+  getType,
+  _formatAttachment,
+  formatHistoryMessage,
+  formatID,
+  formatMessage,
+  formatDeltaEvent,
+  formatDeltaMessage,
+  formatProxyPresence,
+  formatPresence,
+  formatTyp,
+  formatDeltaReadReceipt,
+  formatCookie,
+  formatThread,
+  formatReadReceipt,
+  formatRead,
+  generatePresence,
+  generateAccessiblityCookie,
+  formatDate,
+  decodeClientPayload,
+  getAppState,
+  getAdminTextMessageType,
+  setProxy,
+  getAccessFromBusiness,
+  presenceDecode,
+  presenceEncode,
+  headers,
+  defaultUserAgent,
+  randomUserAgent,
+  meta
+};
